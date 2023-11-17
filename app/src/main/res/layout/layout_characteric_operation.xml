@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/cell_shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Btn_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cellshapbutton1"
+                android:drawableLeft="@drawable/ic_start"
+                android:text="Start" />
+
+            <Button
+                android:id="@+id/Btn_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/cellshapbutton1"
+                android:drawableLeft="@drawable/ic_poweroff"
+                android:text="Stop" />
+
+            <Button
+                android:id="@+id/Btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/cellshapbutton1"
+                android:drawableLeft="@drawable/ic_delete"
+                android:text="Clear List" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="#FDF6F6"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#000"
+            android:fadeScrollbars="true"
+            android:gravity="top"
+            android:padding="10dp"
+            android:scrollbarThumbVertical="@drawable/cell_shape"
+            android:scrollbars="vertical"
+            android:textColor="#FDF6F6"
+            android:textSize="13sp"
+            android:verticalScrollbarPosition="defaultPosition" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:overScrollMode="ifContentScrolls"
+            android:paddingTop="2dip"
+            android:paddingBottom="12dip"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--            Data By  Common Identifier start-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/cell_shape"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Data By Common Identifier  "
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="DB Variables"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/SP_DBVariable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="15dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/Et_modules"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/cell_shape"
+                            android:digits="0123456789ABCDEFabcdef"
+                            android:entries="@array/Data"
+                            android:gravity="center"
+                            android:hint="Enter Command"
+                            android:textColor="@color/black" />
+
+                        <Button
+                            android:id="@+id/Btn_writemodules"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="Debug Command" />
+
+
+                    </LinearLayout>
+
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Data Layer ID  "
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/Et_CIDatalayerID"
+                                android:layout_width="200dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:entries="@array/Data"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/black" />
+
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Buffer"
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/Et_CIBuffer"
+                                android:layout_width="125dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:entries="@array/Data"
+                                android:gravity="center"
+                                android:text="01"
+                                android:textColor="@color/black" />
+
+                            <Button
+                                android:id="@+id/Btn_ciread"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Read" />
+
+                            <Button
+                                android:id="@+id/Btn_ciwrite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Write" />
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+
+                <!--            Data By  Common Identifier end-->
+
+                <!--Data by memory address start-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/cell_shape"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Data By Memory Address "
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Address  "
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/Et_MA_Address"
+                                android:layout_width="120dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:entries="@array/Adress"
+                                android:gravity="center"
+                                android:text="1011"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:text="Size  "
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/Et_MA_Size"
+                                android:layout_width="100dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:entries="@array/Size"
+                                android:gravity="center"
+                                android:text="03"
+                                android:textColor="@color/black" />
+
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Buffer"
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/Et_MA_Buffer"
+                                android:layout_width="125dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:gravity="center"
+                                android:text="01"
+                                android:textColor="@color/black"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/MA_Btnread"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Read" />
+
+                            <Button
+                                android:id="@+id/MA_Btnwrite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Write"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/cell_shape"
+                    android:orientation="vertical">                    <!--send-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Generic Data to Send "
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Send:  "
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/Et_Send"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@id/btn"
+                                android:background="@drawable/cell_shape"
+                                android:digits="0123456789ABCDEFabcdef"
+                                android:gravity="center"
+                                android:hint="Enter Hex"
+                                android:inputType="text"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="Hexadecimal"
+                                android:textSize="10dp" />
+
+                            <Button
+                                android:id="@+id/btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
